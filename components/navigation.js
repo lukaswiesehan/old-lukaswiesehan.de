@@ -14,19 +14,19 @@ const NavItems = () => {
     <ul>
       <li className="">
         <NavLink to="showcase" title="Showcase" emoji="🤙"></NavLink>
-        <div className="h-8 my-4 ml-3 border-l-2 border-cool-gray-600"></div>  
+        <div className="h-8 my-4 ml-3 border-l-2 border-warm-gray-400 dark:border-cool-gray-600"></div>  
       </li>
       <li>
         <NavLink to="services" title="Services" emoji="🤝"></NavLink>
-        <div className="h-8 my-4 ml-3 border-l-2 border-cool-gray-600"></div>
+        <div className="h-8 my-4 ml-3 border-l-2 border-warm-gray-400 dark:border-cool-gray-600"></div>
       </li>
       <li>
         <NavLink to="contact" title="Kontakt" emoji="👋"></NavLink>
-        <div className="h-8 my-4 ml-3 border-l-2 border-cool-gray-600"></div>
+        <div className="h-8 my-4 ml-3 border-l-2 border-warm-gray-400 dark:border-cool-gray-600"></div>
       </li>
       <li>
         <NavLink to="about" title="Über mich" emoji="✌️"></NavLink>
-        <div className="h-8 my-4 ml-3 border-l-2 border-cool-gray-600"></div>
+        <div className="h-8 my-4 ml-3 border-l-2 border-warm-gray-400 dark:border-cool-gray-600"></div>
       </li>
       <li>
         <NavLink to="blog" title="Blog" emoji="✍️"></NavLink>
@@ -73,19 +73,19 @@ const MobileNavItems = ({toggle}) => {
     <motion.ul variants={ulVariants}>
       <motion.li variants={liVariants}>
         <NavLink to="showcase" toggle={toggle} title="Showcase" emoji="🤙"></NavLink> 
-        <div className="h-4 my-2 ml-3 border-l-2 border-cool-gray-600"></div>  
+        <div className="h-4 my-2 ml-3 border-l-2 border-warm-gray-400 dark:border-cool-gray-600"></div>  
       </motion.li>
       <motion.li variants={liVariants}>
         <NavLink to="services" toggle={toggle} title="Services" emoji="🤝"></NavLink>
-        <div className="h-4 my-2 ml-3 border-l-2 border-cool-gray-600"></div>
+        <div className="h-4 my-2 ml-3 border-l-2 border-warm-gray-400 dark:border-cool-gray-600"></div>
       </motion.li>
       <motion.li variants={liVariants}>
         <NavLink to="contact" toggle={toggle} title="Kontakt" emoji="👋"></NavLink>
-        <div className="h-4 my-2 ml-3 border-l-2 border-cool-gray-600"></div>
+        <div className="h-4 my-2 ml-3 border-l-2 border-warm-gray-400 dark:border-cool-gray-600"></div>
       </motion.li>
       <motion.li variants={liVariants}>
         <NavLink to="about" toggle={toggle} title="Über mich" emoji="✌️"></NavLink>
-        <div className="h-4 my-2 ml-3 border-l-2 border-cool-gray-600"></div>
+        <div className="h-4 my-2 ml-3 border-l-2 border-warm-gray-400 dark:border-cool-gray-600"></div>
       </motion.li>
       <motion.li variants={liVariants}>
         <NavLink to="blog" toggle={toggle} title="Blog" emoji="✍️"></NavLink>
