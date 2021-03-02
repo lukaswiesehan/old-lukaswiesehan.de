@@ -27,4 +27,10 @@
   body {
     @apply m-0 p-0 bg-cool-gray-800;
   }
+  body.nav-opened {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
 }
