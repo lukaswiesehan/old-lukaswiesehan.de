@@ -14,7 +14,7 @@ export const Header = () => {
       </div>
       {/* CENTER: ILLUSTRATION */}
       <div className="hidden lg:block flex-grow"></div>
-      <div className="flex-grow flex flex-row-reverse w-2/3 max-w-screen-xl mx-8">
+      <div className="flex-grow w-full flex flex-row-reverse mx-8 pb-8">
         <img className="sm:hidden" src="/img/header_illustration_sm.svg" alt="Workspace Illustration"/>
         <img className="hidden sm:block lg:hidden" src="/img/header_illustration_md.svg" alt="Workspace Illustration"/>
         <img className="hidden lg:block" src="/img/header_illustration_lg.svg" alt="Workspace Illustration"/>
