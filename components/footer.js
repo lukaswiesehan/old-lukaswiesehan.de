@@ -4,7 +4,7 @@ import {animateScroll as scroll} from 'react-scroll'
 const currentYear = new Date().getFullYear()
 
 export const Footer = () => (
-  <footer className="bg-footer-background-sm lg:bg-footer-background bg-cover bg-left-top">
+  <footer className="relative z-10 bg-footer-background-sm lg:bg-footer-background bg-cover bg-left-top">
     <div className="max-w-screen-xl px-4 sm:px-8 md:px-16">
       <div className="inline-block pt-20 2xl:pt-32 pb-16 text-blue-gray-500">
         <p className="font-bold">&copy; Lukas Wiesehan {currentYear}</p>

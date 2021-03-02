@@ -10,7 +10,7 @@ export default function Index() {
       </Head>
       <Header></Header>
       <main className="h-screen">
-
+        <button className="hover:text-teal-300">TEST-BUTTON</button>
       </main>
       <Footer></Footer>
     </div>
