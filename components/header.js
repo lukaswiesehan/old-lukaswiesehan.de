@@ -14,10 +14,10 @@ export const Header = () => {
       </div>
       {/* CENTER: ILLUSTRATION */}
       <div className="hidden lg:block flex-grow"></div>
-      <div className="flex-grow flex flex-row-reverse w-2/3 max-w-screen-xl max-h-screen mx-8">
-        <img className="sm:hidden h-full" src="/img/header_illustration_sm.svg" alt="Workspace Illustration"/>
-        <img className="hidden sm:block lg:hidden h-full" src="/img/header_illustration_md.svg" alt="Workspace Illustration"/>
-        <img className="hidden lg:block h-full" src="/img/header_illustration_lg.svg" alt="Workspace Illustration"/>
+      <div className="flex-grow flex flex-row-reverse w-2/3 max-w-screen-xl mx-8">
+        <img className="sm:hidden max-h-screen" src="/img/header_illustration_sm.svg" alt="Workspace Illustration"/>
+        <img className="hidden sm:block lg:hidden max-h-screen" src="/img/header_illustration_md.svg" alt="Workspace Illustration"/>
+        <img className="hidden lg:block max-h-screen" src="/img/header_illustration_lg.svg" alt="Workspace Illustration"/>
       </div>
       {/* RIGHT SIDE: LINKS */}
       <div className="relative z-10 flex-shrink-0 flex flex-col pt-8 md:py-16">
