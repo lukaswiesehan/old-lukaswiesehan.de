@@ -11,7 +11,7 @@ export const Header = () => {
   }
 
   return (
-    <header className="w-full md:max-h-screen flex px-4 sm:px-8 md:px-16 transition-bg duration-300 ease-in-out bg-header-background-sm dark:bg-header-background-sm-dark sm:bg-header-background-md sm:dark:bg-header-background-md-dark lg:bg-header-background-lg lg:dark:bg-header-background-lg-dark bg-right-top bg-no-repeat">
+    <header className="w-full max-h-4/5-screen md:max-h-screen flex px-4 sm:px-8 md:px-16 transition-bg duration-300 ease-in-out bg-header-background-sm dark:bg-header-background-sm-dark sm:bg-header-background-md sm:dark:bg-header-background-md-dark lg:bg-header-background-lg lg:dark:bg-header-background-lg-dark bg-right-top bg-no-repeat">
       {/* LEFT SIDE: TITLE & NAVIGATION */}
       <div className="relative z-10 flex-shrink-0 flex flex-col py-8 md:py-16 text-xl">
         <div>
@@ -22,7 +22,7 @@ export const Header = () => {
       </div>
       {/* CENTER: ILLUSTRATION */}
       <div className="hidden lg:block flex-grow"></div>
-      <div className="w-full flex flex-row-reverse mx-8 pb-8">
+      <div className="flex-grow w-full flex flex-row-reverse mx-8 pb-8">
         <img className="sm:hidden" src="/img/header_illustration_sm.svg" alt="Workspace Illustration"/>
         <img className="hidden sm:block lg:hidden" src="/img/header_illustration_md.svg" alt="Workspace Illustration"/>
         <img className="hidden lg:block" src="/img/header_illustration_lg.svg" alt="Workspace Illustration"/>
