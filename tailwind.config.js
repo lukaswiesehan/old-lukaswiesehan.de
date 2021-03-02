@@ -19,6 +19,9 @@ module.exports = {
       'teal': colors.teal
     },
     extend: {
+      maxHeight: {
+        '4/5-screen': '80vh'
+      },
       backgroundImage: theme => ({
         'footer-background-sm': "url('/img/footer_background_sm.svg')",
         'footer-background': "url('/img/footer_background.svg')",
