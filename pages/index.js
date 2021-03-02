@@ -4,13 +4,17 @@ import {Footer} from '../components/footer'
 
 export default function Index() {
   return (
-    <div className="text-cool-gray-200">
+    <div className="dark:text-cool-gray-200 text-blue-gray-800">
       <Head>
         <title>Lukas Wiesehan | Design & Development</title>
       </Head>
       <Header></Header>
-      <main className="h-screen">
-        <button className="hover:text-teal-300">TEST-BUTTON</button>
+      <main>
+        <section id="showcase" className="h-screen"></section>
+        <section id="services" className="h-screen"></section>
+        <section id="contact" className="h-screen"></section>
+        <section id="about" className="h-screen"></section>
+        <section id="blog" className="h-screen"></section>
       </main>
       <Footer></Footer>
     </div>

@@ -10,7 +10,7 @@ class MyDocument extends Document {
           <link rel="preload" href="/fonts/lato-v17-latin-900.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/>
           <link rel="icon" href="/favicon.ico"/>
         </Head>  
-        <body>
+        <body className="dark">
           <Main />
           <NextScript />
         </body>
