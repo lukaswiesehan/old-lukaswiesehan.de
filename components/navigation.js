@@ -3,8 +3,8 @@ import {animateScroll as scroll, Link as ScrollLink} from 'react-scroll'
 import Link from 'next/link'
 
 const NavLink = props => (
-  <span className="block group cursor-pointer transition-all duration-300 transform hover:text-teal-600 dark:hover:text-teal-300 hover:scale-105 hover:translate-x-3 sm:hover:translate-x-4 md:hover:translate-x-5 lg:hover:translate-x-1">
-    <ScrollLink to={props.to} onClick={() => {setTimeout(props.toggle, 100)}} smooth={true} delay={100} duration={600}>{props.title}</ScrollLink>
+  <span className="block group cursor-pointer font-bold transition-all duration-300 transform hover:text-teal-600 dark:hover:text-teal-300 hover:scale-105 hover:translate-x-3 sm:hover:translate-x-4 md:hover:translate-x-5 lg:hover:translate-x-1">
+    <ScrollLink to={props.to} onClick={() => {setTimeout(props.toggle, 100)}} smooth={true} delay={100} duration={600} offset={-50}>{props.title}</ScrollLink>
     <span className="inline-block ml-2 opacity-0 transform -translate-x-2 transition-all duration-200 ease-in-out group-hover:opacity-100 group-hover:translate-x-0">{props.emoji}</span>
   </span>
 )

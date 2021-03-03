@@ -1,3 +1,4 @@
+const { m } = require('framer-motion')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -21,6 +22,10 @@ module.exports = {
       'teal': colors.teal
     },
     extend: {
+      cursor: {
+        'grab': 'grab',
+        'grabbing': 'grabbing'
+      },
       maxHeight: {
         '4/5-screen': '80vh'
       },
@@ -48,7 +53,8 @@ module.exports = {
     extend: {
       translate: ['group-hover'],
       display: ['dark'],
-      backgroundImage: ['dark']
+      backgroundImage: ['dark'],
+      cursor: ['active']
     },
   },
   plugins: [],

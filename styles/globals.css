@@ -25,10 +25,10 @@
     src: local(''), url('/fonts/lato-v17-latin-900.woff2') format('woff2');
   }
   body {
-    @apply m-0 p-0 bg-warm-gray-200 transition-colors duration-300 ease-in-out;
+    @apply m-0 p-0 text-blue-gray-700 text-lg bg-warm-gray-200 transition-colors duration-300 ease-in-out;
   }
   body.dark {
-    @apply bg-cool-gray-800;
+    @apply text-cool-gray-300 bg-cool-gray-800;
   }
   body.nav-opened {
     overflow: hidden;
