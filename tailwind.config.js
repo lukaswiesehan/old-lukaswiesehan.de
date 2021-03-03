@@ -24,6 +24,9 @@ module.exports = {
       maxHeight: {
         '4/5-screen': '80vh'
       },
+      height: {
+        'screen-p-8': 'calc(100vh - 2rem)'
+      },
       backgroundImage: theme => ({
         'footer-background-sm': "url('/img/footer_background_sm.svg')",
         'footer-background': "url('/img/footer_background.svg')",
