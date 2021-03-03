@@ -22,6 +22,11 @@ module.exports = {
       'teal': colors.teal
     },
     extend: {
+      colors: {
+        'warm-gray': {
+          '250': '#E0DEDD'
+        }
+      },
       cursor: {
         'grab': 'grab',
         'grabbing': 'grabbing'

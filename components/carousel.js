@@ -48,9 +48,9 @@ export const Carousel = ({children}) => {
               opacity: {duration: 0.4}
             }}
             drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
+            dragConstraints={{left: 0, right: 0}}
             dragElastic={1}
-            onDragEnd={(e, { offset, velocity }) => {
+            onDragEnd={(e, {offset, velocity}) => {
               const swipe = swipePower(offset.x, velocity.x)
               if (swipe < -swipeConfidenceThreshold) {
                 paginate(1)
@@ -59,7 +59,7 @@ export const Carousel = ({children}) => {
               }
             }}
           >
-            <div className="w-full h-full rounded-xl shadow-lg bg-gradient-to-br from-warm-gray-200 to-warm-gray-300 dark:from-blue-gray-600 dark:to-blue-gray-700">
+            <div className="w-full h-full rounded-xl shadow-lg bg-gradient-to-br from-warm-gray-250 to-warm-gray-300 dark:from-blue-gray-600 dark:to-blue-gray-700">
               {children[pageIndex]}
             </div>
           </motion.div>

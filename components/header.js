@@ -1,12 +1,14 @@
 import Link from 'next/link'
 import {Navigation} from './navigation'
+import { useTheme } from 'next-themes'
 
 export const Header = () => {
+  const { theme, setTheme } = useTheme()
   const toggleDarkMode = () => {
-    if(document.body.classList.contains('dark')) {
-      document.body.classList.remove('dark')
+    if(theme =='dark') {
+      setTheme('light')
     } else {
-      document.body.classList.add('dark')
+      setTheme('dark')
     }
   }
 
