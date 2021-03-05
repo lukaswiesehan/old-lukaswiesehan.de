@@ -1,9 +1,35 @@
 import {useState} from 'react'
 import {motion, AnimatePresence} from 'framer-motion'
 import {wrap} from 'popmotion'
+import Image from 'next/image'
+import {Link} from '../components/link'
+
+const Card = () => (
+  <div className="md:flex h-full">
+    <div className="w-1/2 h-full p-8 flex flex-col justify-end">
+      <div>
+        <p>
+          <span className="inline-block rounded-full px-3 py-px mr-2 font-bold text-xs uppercase tracking-wider bg-teal-500 text-teal-900">Design</span>
+          <span className="inline-block rounded-full px-3 py-px mr-2 font-bold text-xs uppercase tracking-wider bg-teal-500 text-teal-900">Entwicklung</span>
+        </p>
+        <h3 className="mt-4 font-bold text-3xl">Website: Kita Oerel</h3>
+        <p className="mt-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat... <Link href="/">Weiterlesen</Link></p>
+      </div>
+    </div>
+    <div className="relative w-1/2 h-full pt-12">
+      <div className="absolute overflow-hidden bg-true-gray-400 dark:bg-blue-gray-400 p-2 rounded-lg w-72 transform -rotate-6">
+        <Image src="/img/preview_kita_desktop.jpg" width="300" height="500"></Image>
+        <div className="absolute left-0 top-0 w-full h-full bg-true-gray-300 dark:bg-blue-gray-400 bg-opacity-40 dark:bg-opacity-40 transition-all duration-200 ease-in-out hover:bg-opacity-0 dark:hover:bg-opacity-0"></div>
+      </div>
+      <div className="relative overflow-hidden bg-true-gray-400 dark:bg-blue-gray-400 p-2 pb-1 ml-56 mt-12 rounded-lg w-32 transform -rotate-6">
+        <Image src="/img/preview_kita_mobile.jpg" width="150" height="300"></Image>
+        <div className="absolute left-0 top-0 w-full h-full bg-true-gray-300 dark:bg-blue-gray-400 bg-opacity-40 dark:bg-opacity-40 transition-all duration-200 ease-in-out hover:bg-opacity-0 dark:hover:bg-opacity-0"></div>
+      </div>
+    </div>
+  </div>
+)
 
 /* Source: https://codesandbox.io/s/framer-motion-image-gallery-pqvx3?fontsize=14&module=/src/Example.tsx&file=/src/styles.css */
-
 const variants = {
   enter: (direction) => {
     return {x: direction > 0 ? 1000 : -1000, opacity: 0, scale: 0.8}
@@ -19,7 +45,7 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity
 }
 
-export const Carousel = ({children}) => {
+const Carousel = ({children}) => {
   const [[page, direction], setPage] = useState([0, 0])
   const pageIndex = wrap(0, children.length, page)
   const paginate = (newDirection) => {
@@ -59,7 +85,7 @@ export const Carousel = ({children}) => {
               }
             }}
           >
-            <div className="w-full h-full rounded-xl shadow-lg bg-gradient-to-br from-warm-gray-250 to-warm-gray-300 dark:from-blue-gray-600 dark:to-blue-gray-700">
+            <div className="w-full h-full rounded-xl shadow-lg overflow-hidden bg-gradient-to-br from-warm-gray-250 to-warm-gray-300 dark:from-blue-gray-600 dark:to-blue-gray-700">
               {children[pageIndex]}
             </div>
           </motion.div>
@@ -75,3 +101,12 @@ export const Carousel = ({children}) => {
     </div>
   )
 }
+
+export const Showcase = () => (
+  <Carousel>
+    <Card></Card>
+    <Card></Card>
+  </Carousel>
+)
+
+

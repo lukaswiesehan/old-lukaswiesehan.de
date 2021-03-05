@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+  @import '../public/fontawesome/css/all.min.css';
   @font-face {
     font-family: 'Lato';
     font-style: normal;

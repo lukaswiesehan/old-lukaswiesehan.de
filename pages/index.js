@@ -2,7 +2,7 @@ import Head from 'next/head'
 import {Header} from '../components/header'
 import {Footer} from '../components/footer'
 import {HeadingSection} from '../components/headingSection'
-import {Carousel} from '../components/carousel'
+import {Showcase} from '../components/showcaseCarousel'
 
 export default function Index() {
   return (
@@ -22,11 +22,7 @@ export default function Index() {
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
             <p className="mt-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
           </HeadingSection>
-          <Carousel>
-            <div className="p-8">henlo</div>
-            <div className="p-8">hi</div>
-            <div className="p-8">moin</div>
-          </Carousel>
+          <Showcase></Showcase>
         </section>
         <section id="services" className="h-screen"></section>
         <section id="contact" className="h-screen"></section>
