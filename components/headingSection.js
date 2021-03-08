@@ -22,7 +22,7 @@ export const HeadingSection = ({subtitle, emoji, title, order, children}) => (
       <div className="flex-shrink-0">
         <Title order={order}>{title}</Title>
       </div>
-      <div className="md:ml-12 lg:ml-20 mt-10 md:mt-0">
+      <div className="md:ml-12 lg:ml-20 mt-6 md:mt-0">
         {children}
       </div>
     </div>

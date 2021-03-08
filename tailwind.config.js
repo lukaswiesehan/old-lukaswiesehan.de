@@ -38,16 +38,16 @@ module.exports = {
         'screen-p-8': 'calc(100vh - 2rem)'
       },
       backgroundImage: theme => ({
-        'footer-background-sm': "url('/img/footer_background_sm.svg')",
-        'footer-background': "url('/img/footer_background.svg')",
-        'footer-background-sm-dark': "url('/img/footer_background_sm_dark.svg')",
-        'footer-background-dark': "url('/img/footer_background_dark.svg')",
-        'header-background-sm': "url('/img/header_background_sm.svg')",
-        'header-background-md': "url('/img/header_background_md.svg')",
-        'header-background-lg': "url('/img/header_background_lg.svg')",
-        'header-background-sm-dark': "url('/img/header_background_sm_dark.svg')",
-        'header-background-md-dark': "url('/img/header_background_md_dark.svg')",
-        'header-background-lg-dark': "url('/img/header_background_lg_dark.svg')"
+        'footer-background-sm': "url('/img/backgrounds/footer_background_sm.svg')",
+        'footer-background': "url('/img/backgrounds/footer_background.svg')",
+        'footer-background-sm-dark': "url('/img/backgrounds/footer_background_sm_dark.svg')",
+        'footer-background-dark': "url('/img/backgrounds/footer_background_dark.svg')",
+        'header-background-sm': "url('/img/backgrounds/header_background_sm.svg')",
+        'header-background-md': "url('/img/backgrounds/header_background_md.svg')",
+        'header-background-lg': "url('/img/backgrounds/header_background_lg.svg')",
+        'header-background-sm-dark': "url('/img/backgrounds/header_background_sm_dark.svg')",
+        'header-background-md-dark': "url('/img/backgrounds/header_background_md_dark.svg')",
+        'header-background-lg-dark': "url('/img/backgrounds/header_background_lg_dark.svg')"
       }),
       transitionProperty: {
         'bg': 'background-image'
@@ -58,7 +58,7 @@ module.exports = {
     extend: {
       translate: ['group-hover'],
       display: ['dark'],
-      backgroundImage: ['dark'],
+      backgroundImage: ['dark', 'hover'],
       cursor: ['active']
     },
     lineClamp: ['responsive'],

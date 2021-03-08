@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import {Navigation} from './navigation'
-import { useTheme } from 'next-themes'
+import {useTheme} from 'next-themes'
 
-export const Header = () => {
+export const LandingHeader = () => {
   const { theme, setTheme } = useTheme()
   const toggleDarkMode = () => {
     if(theme =='dark') {
@@ -25,9 +25,9 @@ export const Header = () => {
       {/* CENTER: ILLUSTRATION */}
       <div className="hidden lg:block flex-grow"></div>
       <div className="flex-grow w-full flex flex-row-reverse mx-8 pb-8">
-        <img className="sm:hidden" src="/img/header_illustration_sm.svg" alt="Workspace Illustration"/>
-        <img className="hidden sm:block lg:hidden" src="/img/header_illustration_md.svg" alt="Workspace Illustration"/>
-        <img className="hidden lg:block xl:h-screen-p-8" src="/img/header_illustration_lg.svg" alt="Workspace Illustration"/>
+        <img className="sm:hidden" src="/img/illustrations/header_illustration_sm.svg" alt="Workspace Illustration"/>
+        <img className="hidden sm:block lg:hidden" src="/img/illustrations/header_illustration_md.svg" alt="Workspace Illustration"/>
+        <img className="hidden lg:block xl:h-screen-p-8" src="/img/illustrations/header_illustration_lg.svg" alt="Workspace Illustration"/>
       </div>
       {/* RIGHT SIDE: LINKS */}
       <div className="relative z-10 flex-shrink-0 flex flex-col pt-8 md:py-16">

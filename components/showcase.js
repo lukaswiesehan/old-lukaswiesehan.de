@@ -3,9 +3,10 @@ import {motion, AnimatePresence} from 'framer-motion'
 import {wrap} from 'popmotion'
 import Image from 'next/image'
 import {Link} from './link'
+import {Card} from './card'
 
-export const Card = ({title, tags, slug, link, previewDesktop, previewMobile}) => (
-  <div className="md:flex h-full">
+export const ShowcaseCard = ({title, tags, slug, link, previewDesktop, previewMobile}) => (
+  <div className="relative z-10 md:flex h-full">
     <div className="w-full md:w-7/12 lg:w-1/2 md:h-full p-4 md:p-8 flex flex-col justify-end">
       <div>
         <p>
@@ -25,7 +26,7 @@ export const Card = ({title, tags, slug, link, previewDesktop, previewMobile}) =
         </div>
       </div>
       <div className="absolute w-full pl-36 sm:pl-64 md:pl-0">
-        <div className="relative z-10 overflow-hidden bg-true-gray-400 dark:bg-blue-gray-400 p-2 pb-1 mx-auto md:ml-56 mt-6 md:mt-12 rounded-lg w-20 md:w-32 transform -rotate-6">
+        <div className="relative overflow-hidden bg-true-gray-400 dark:bg-blue-gray-400 p-2 pb-1 mx-auto md:ml-56 mt-6 md:mt-12 rounded-lg w-20 md:w-32 transform -rotate-6">
           <Image src={previewMobile} width="150" height="300"></Image>
           <div className="absolute left-0 top-0 w-full h-full bg-true-gray-300 dark:bg-blue-gray-400 bg-opacity-40 dark:bg-opacity-40"></div>
         </div>
@@ -50,7 +51,7 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity
 }
 
-export const Carousel = ({children}) => {
+export const ShowcaseCarousel = ({children}) => {
   const [[page, direction], setPage] = useState([0, 0])
   const pageIndex = wrap(0, children.length, page)
   const paginate = (newDirection) => {
@@ -67,7 +68,7 @@ export const Carousel = ({children}) => {
       </div>
       <div className="relative rounded-xl w-full h-96 overflow-hidden">
         <AnimatePresence initial={false} custom={direction}>
-          <motion.div className="absolute px-4 pb-6 w-full h-full cursor-grab active:cursor-grabbing"
+          <motion.div className="absolute p-4 pb-6 w-full h-full cursor-grab active:cursor-grabbing"
             key={page}
             custom={direction}
             variants={variants}
@@ -90,9 +91,12 @@ export const Carousel = ({children}) => {
               }
             }}
           >
-            <div className="w-full h-full rounded-xl shadow-lg overflow-hidden bg-gradient-to-br from-warm-gray-250 to-warm-gray-300 dark:from-blue-gray-600 dark:to-blue-gray-700">
+            <div className="block lg:hidden w-full h-full rounded-xl shadow-lg overflow-hidden bg-gradient-to-br from-warm-gray-250 to-warm-gray-300 dark:from-blue-gray-600 dark:to-blue-gray-700">
               {children[pageIndex]}
             </div>
+            <Card className="w-full h-full">
+              {children[pageIndex]}
+            </Card>
           </motion.div>
         </AnimatePresence>
       </div>
