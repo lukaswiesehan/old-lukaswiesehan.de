@@ -68,7 +68,7 @@ export const ShowcaseCarousel = ({children}) => {
       </div>
       <div className="relative rounded-xl w-full h-96 overflow-hidden">
         <AnimatePresence initial={false} custom={direction}>
-          <motion.div className="absolute p-4 pb-6 w-full h-full cursor-grab active:cursor-grabbing"
+          <motion.div className="absolute p-4 pt-2 pb-6 w-full h-full cursor-grab active:cursor-grabbing"
             key={page}
             custom={direction}
             variants={variants}
@@ -91,9 +91,6 @@ export const ShowcaseCarousel = ({children}) => {
               }
             }}
           >
-            <div className="block lg:hidden w-full h-full rounded-xl shadow-lg overflow-hidden bg-gradient-to-br from-warm-gray-250 to-warm-gray-300 dark:from-blue-gray-600 dark:to-blue-gray-700">
-              {children[pageIndex]}
-            </div>
             <Card className="w-full h-full">
               {children[pageIndex]}
             </Card>

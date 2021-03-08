@@ -6,7 +6,7 @@ export const Card = ({className, children}) => (
     tiltMaxAngleX={4}
     tiltMaxAngleY={2}
     glareEnable={true}
-    glareMaxOpacity={0.2}
+    glareMaxOpacity={0.3}
   >
     <div className="absolute w-full h-full bg-gradient-to-br transition-opacity duration-300 from-warm-gray-250 to-warm-gray-300 dark:from-blue-gray-600 dark:to-blue-gray-700 opacity-0 group-hover:opacity-100"/>
     <div className="h-full">{children}</div>

@@ -22,8 +22,10 @@ export default function Index({allShowcases}) {
       <Head>
         <title>Lukas Wiesehan | Design & Development</title>
       </Head>
+      {/* HEADER SECTION */}
       <LandingHeader></LandingHeader>
       <main>
+        {/* SHOWCASE SECTION */}
         <section id="showcase" className="max-w-screen-lg mx-auto px-4 sm:px-8 md:px-16 mt-20 md:mt-32 lg:mt-48">
           <HeadingSection 
             subtitle="Showcase" 
@@ -48,24 +50,23 @@ export default function Index({allShowcases}) {
             ))}
           </ShowcaseCarousel>
         </section>
-
-
-
-
-
-
-
+        {/* SERVICES SECTION */}
         <section id="services" className="relative mt-20 md:mt-32 lg:mt-48">
-          <div className="absolute w-5/12 h-full">
-            <div className="w-full h-full dark:hidden"><Image src="/img/backgrounds/design_background.svg" layout="fill" className="object-cover object-right"></Image></div>
-            <div className="w-full h-full hidden dark:block"><Image src="/img/backgrounds/design_background_dark.svg" layout="fill" className="object-cover object-right"></Image></div>
+          <div className="absolute w-full sm:w-3/4 md:w-1/2 lg:w-1/3 flex justify-end px-4">
+            <div className="dark:hidden"><Image src="/img/backgrounds/design_background.svg" width="800" height="614"></Image></div>
+            <div className="hidden dark:block"><Image src="/img/backgrounds/design_background_dark.svg" width="800" height="614"></Image></div>
           </div>
 
-          <div className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-16 pt-32 flex">
-            <div className="w-1/3">
+
+          <div className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-16 lg:pt-16 xl:pt-28 2xl:pt-40 lg:flex">
+            
+            
+            <div className="lg:w-1/3">
               <Image src="/img/illustrations/design_illustration.svg" width="500" height="287"></Image>
             </div>
-            <div className="w-2/3 pl-32">
+
+
+            <div className="lg:w-2/3 pt-8 lg:pl-20 xl:pl-32">
               <HeadingSection 
                 subtitle="Services" 
                 emoji="🤝" 
@@ -74,7 +75,7 @@ export default function Index({allShowcases}) {
               >
                 <p>Als Visual Designer erarbeite ich Brandings, Printmedien und Websites - immer mit viel Liebe zum Detail und abgestimmt auf Dein Unternehmen.</p>
               </HeadingSection>
-              <div className="mt-12 md:mt-16 grid grid-cols-1 xl:grid-cols-2 gap-6">
+              <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-6">
                 <Card>
                   <div className="relative z-10 p-4 pb-6 md:p-6 md:pb-8">
                     <div className="flex justify-between mb-4">
