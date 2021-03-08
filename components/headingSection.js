@@ -9,9 +9,9 @@ export const Subtitle = ({text, emoji}) => (
 
 export const Title = ({children, order}) => {
   if(order == 1) {
-    return (<h1 className="text-5xl md:text-4xl lg:text-5xl font-bold text-teal-600 dark:text-teal-500">{children}</h1>)
+    return (<h1 className="text-4xl sm:text-5xl md:text-4xl lg:text-5xl font-bold text-teal-600 dark:text-teal-500">{children}</h1>)
   } else {
-    return (<h2 className="text-5xl md:text-4xl lg:text-5xl font-bold text-teal-600 dark:text-teal-500">{children}</h2>)
+    return (<h2 className="text-4xl sm:text-5xl md:text-4xl lg:text-5xl font-bold text-teal-600 dark:text-teal-500">{children}</h2>)
   }
 }
 

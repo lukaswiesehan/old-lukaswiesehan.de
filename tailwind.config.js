@@ -61,6 +61,9 @@ module.exports = {
       backgroundImage: ['dark'],
       cursor: ['active']
     },
+    lineClamp: ['responsive'],
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }
