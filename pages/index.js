@@ -26,7 +26,7 @@ export default function Index({allShowcases}) {
       <LandingHeader></LandingHeader>
       <main>
         {/* SHOWCASE SECTION */}
-        <section id="showcase" className="max-w-screen-lg mx-auto px-4 sm:px-8 md:px-16 mt-20 md:mt-32 lg:mt-48">
+        <section id="showcase" className="max-w-screen-lg mx-auto px-4 sm:px-8 md:px-16 mt-32 lg:mt-48">
           <HeadingSection 
             subtitle="Showcase" 
             emoji="🤙" 
@@ -51,7 +51,7 @@ export default function Index({allShowcases}) {
           </ShowcaseCarousel>
         </section>
         {/* SERVICES SECTION */}
-        <section id="services" className="relative mt-20 md:mt-32 lg:mt-48">
+        <section id="services" className="relative mt-32 lg:mt-48">
           <div className="absolute w-full sm:w-3/4 md:w-1/2 lg:w-1/3 flex justify-end px-4">
             <div className="dark:hidden"><Image src="/img/backgrounds/design_background.svg" width="800" height="614"></Image></div>
             <div className="hidden dark:block"><Image src="/img/backgrounds/design_background_dark.svg" width="800" height="614"></Image></div>
@@ -59,14 +59,10 @@ export default function Index({allShowcases}) {
 
 
           <div className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-16 lg:pt-16 xl:pt-28 2xl:pt-40 lg:flex">
-            
-            
             <div className="lg:w-1/3">
               <Image src="/img/illustrations/design_illustration.svg" width="500" height="287"></Image>
             </div>
-
-
-            <div className="lg:w-2/3 pt-8 lg:pl-20 xl:pl-32">
+            <div className="lg:w-2/3 pt-16 lg:pt-0 lg:pl-20 xl:pl-32">
               <HeadingSection 
                 subtitle="Services" 
                 emoji="🤝" 
