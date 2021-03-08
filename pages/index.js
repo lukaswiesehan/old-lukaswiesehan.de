@@ -2,9 +2,20 @@ import Head from 'next/head'
 import {Header} from '../components/header'
 import {Footer} from '../components/footer'
 import {HeadingSection} from '../components/headingSection'
-import {Showcase} from '../components/showcaseCarousel'
+import {Card, Carousel} from '../components/showcase'
 
-export default function Index() {
+import {getSortedShowcaseEntries} from '../lib/showcase'
+
+export async function getStaticProps() {
+  const allShowcases = getSortedShowcaseEntries()
+  return {
+    props: {
+      allShowcases
+    }
+  }
+}
+
+export default function Index({allShowcases}) {
   return (
     <div>
       <Head>
@@ -22,7 +33,19 @@ export default function Index() {
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
             <p className="mt-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
           </HeadingSection>
-          <Showcase></Showcase>
+          <Carousel>
+            {allShowcases.map((showcase) => (
+              <Card
+                key={showcase.id}
+                title={showcase.title}
+                tags={showcase.tags}
+                slug={showcase.slug}
+                link={`/showcase/${showcase.id}`}
+                previewDesktop={`/img/showcase/${showcase.id}/${showcase.previewDesktop}`}
+                previewMobile={`/img/showcase/${showcase.id}/${showcase.previewMobile}`}
+              />
+            ))}
+          </Carousel>
         </section>
         <section id="services" className="h-screen"></section>
         <section id="contact" className="h-screen"></section>

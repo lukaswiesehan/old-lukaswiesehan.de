@@ -2,31 +2,32 @@ import {useState} from 'react'
 import {motion, AnimatePresence} from 'framer-motion'
 import {wrap} from 'popmotion'
 import Image from 'next/image'
-import {Link} from '../components/link'
+import {Link} from './link'
 
-const Card = () => (
+export const Card = ({title, tags, slug, link, previewDesktop, previewMobile}) => (
   <div className="md:flex h-full">
     <div className="w-full md:w-7/12 lg:w-1/2 md:h-full p-4 md:p-8 flex flex-col justify-end">
       <div>
         <p>
-          <span className="inline-block rounded-full px-3 py-px mr-2 font-bold text-xs uppercase tracking-wider bg-teal-500 text-teal-900">Design</span>
-          <span className="inline-block rounded-full px-3 py-px mr-2 font-bold text-xs uppercase tracking-wider bg-teal-500 text-teal-900">Entwicklung</span>
+          {tags.map((tag, index) => (
+            <span key={index} className="inline-block rounded-full px-3 py-px mr-2 font-bold text-xs uppercase tracking-wider bg-teal-500 text-teal-900">{tag}</span>
+          ))}
         </p>
-        <h3 className="mt-4 font-bold text-2xl md:text-3xl">Website: Kita Oerel</h3>
-        <p className="mt-4"><span className="line-clamp-2 md:line-clamp-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</span><Link href="/">Weiterlesen</Link></p>
+        <h3 className="mt-4 font-bold text-2xl md:text-3xl">{title}</h3>
+        <p className="mt-4"><span className="line-clamp-2 md:line-clamp-3">{slug}</span><Link href={link}>Weiterlesen</Link></p>
       </div>
     </div>
     <div className="relative w-full md:w-5/12 lg:w-1/2 h-full pt-4 md:pt-12">
       <div className="absolute w-full">
         <div className="relative overflow-hidden bg-true-gray-400 dark:bg-blue-gray-400 p-2 rounded-lg mx-auto md:ml-0 w-48 sm:w-72 transform -rotate-6">
-          <Image src="/img/preview_kita_desktop.jpg" width="300" height="500"></Image>
-          <div className="absolute left-0 top-0 w-full h-full bg-true-gray-300 dark:bg-blue-gray-400 bg-opacity-40 dark:bg-opacity-40 transition-all duration-200 ease-in-out hover:bg-opacity-0 dark:hover:bg-opacity-0"></div>
+          <Image src={previewDesktop} width="300" height="500"></Image>
+          <div className="absolute left-0 top-0 w-full h-full bg-true-gray-300 dark:bg-blue-gray-400 bg-opacity-40 dark:bg-opacity-40"></div>
         </div>
       </div>
       <div className="absolute w-full pl-36 sm:pl-64 md:pl-0">
         <div className="relative z-10 overflow-hidden bg-true-gray-400 dark:bg-blue-gray-400 p-2 pb-1 mx-auto md:ml-56 mt-6 md:mt-12 rounded-lg w-20 md:w-32 transform -rotate-6">
-          <Image src="/img/preview_kita_mobile.jpg" width="150" height="300"></Image>
-          <div className="absolute left-0 top-0 w-full h-full bg-true-gray-300 dark:bg-blue-gray-400 bg-opacity-40 dark:bg-opacity-40 transition-all duration-200 ease-in-out hover:bg-opacity-0 dark:hover:bg-opacity-0"></div>
+          <Image src={previewMobile} width="150" height="300"></Image>
+          <div className="absolute left-0 top-0 w-full h-full bg-true-gray-300 dark:bg-blue-gray-400 bg-opacity-40 dark:bg-opacity-40"></div>
         </div>
       </div>
     </div>
@@ -49,7 +50,7 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity
 }
 
-const Carousel = ({children}) => {
+export const Carousel = ({children}) => {
   const [[page, direction], setPage] = useState([0, 0])
   const pageIndex = wrap(0, children.length, page)
   const paginate = (newDirection) => {
@@ -105,12 +106,5 @@ const Carousel = ({children}) => {
     </div>
   )
 }
-
-export const Showcase = () => (
-  <Carousel>
-    <Card></Card>
-    <Card></Card>
-  </Carousel>
-)
 
 
