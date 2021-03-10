@@ -56,21 +56,44 @@ export const ProductCarousel = ({children}) => {
           }}
         >
           {children.map((child, index) => (
-            <motion.div className="absolute p-3 pt-2 pb-6 w-1/3 h-full cursor-grab active:cursor-grabbing"
-              key={index}
-              animate={{
-                x: `${(index - pageIndex) * 100}%`,
-                opacity: (index < pageIndex || index > pageIndex + 2 ) ? 0 : 1,
-                scale: (index < pageIndex || index > pageIndex + 2 ) ? 0.9 : 1
-              }}
-              initial={{x: `${(index - pageIndex) * 100}%`}}
-              transition={{
-                x: {type: 'spring', stiffness: 300, damping: 27}
-              }}
-            >
-              <Card className="w-full h-full">{child}
-              <p>PageIndex: {pageIndex}</p></Card>
-            </motion.div>
+            <>
+              <motion.div className="hidden sm:block lg:hidden xl:block absolute p-3 pt-2 pb-6 w-1/3 h-full cursor-grab active:cursor-grabbing"
+                key={index}
+                animate={{
+                  x: `${(index - pageIndex) * 100}%`,
+                  opacity: (index < pageIndex || index > pageIndex + 2 ) ? 0 : 1,
+                  scale: (index < pageIndex || index > pageIndex + 2 ) ? 0.9 : 1
+                }}
+                initial={{x: `${(index - pageIndex) * 100}%`}}
+                transition={{
+                  x: {type: 'spring', stiffness: 300, damping: 27}
+                }}
+              >
+                <Card className="w-full h-full">
+                  {child}
+                  <p>PageIndex: {pageIndex}</p>
+                
+                </Card>
+              </motion.div>
+              <motion.div className="sm:hidden lg:block xl:hidden absolute p-3 pt-2 pb-6 w-1/2 h-full cursor-grab active:cursor-grabbing"
+                key={index}
+                animate={{
+                  x: `${(index - pageIndex) * 100}%`,
+                  opacity: (index < pageIndex || index > pageIndex + 1 ) ? 0 : 1,
+                  scale: (index < pageIndex || index > pageIndex + 1 ) ? 0.9 : 1
+                }}
+                initial={{x: `${(index - pageIndex) * 100}%`}}
+                transition={{
+                  x: {type: 'spring', stiffness: 300, damping: 27}
+                }}
+              >
+                <Card className="w-full h-full">
+                  {child}
+                  <p>PageIndex: {pageIndex}</p>
+                
+                </Card>
+              </motion.div>
+            </>
           ))}
         </motion.div>
         
