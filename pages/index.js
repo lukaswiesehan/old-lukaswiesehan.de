@@ -8,12 +8,15 @@ import {ProductCarousel} from '../components/products'
 import {Card} from '../components/card'
 import {Link} from '../components/link'
 import {getSortedShowcaseEntries} from '../lib/showcase'
+import {getSortedProducts} from '../lib/products'
 
 export async function getStaticProps() {
   const allShowcases = getSortedShowcaseEntries()
+  const allProducts = getSortedProducts()
   return {
     props: {
-      allShowcases
+      allShowcases,
+      allProducts
     }
   }
 }
@@ -33,7 +36,7 @@ const DevelopmentCard = ({title, icon, text, link}) => (
   </Card>
 )
 
-export default function Index({allShowcases}) {
+export default function Index({allShowcases, allProducts}) {
   return (
     <div>
       <Head>
@@ -162,20 +165,24 @@ export default function Index({allShowcases}) {
                 title="Druck"
                 order="2"
               >
-                <p>Alles, was Du für Dein Unternehmen oder Deine Veranstaltung an Drucksachen benötigst, lasse ich für Dich drucken und direkt zu Dir liefern.</p>
+                <p>Alles, was Du für Dein Unternehmen oder Deine Veranstaltung an Werbemitteln benötigst, lasse ich für Dich drucken und direkt zu Dir liefern.</p>
               </HeadingSection>
 
               <ProductCarousel>
-                <div>Nummer 0</div>
-                <div>Nummer 1</div>
-                <div>Nummer 2</div>
-                <div>Nummer 3</div>
-                <div>Nummer 4</div>
-                <div>Nummer 5</div>
-                <div>Nummer 6</div>
-                <div>Nummer 7</div>
-                <div>Nummer 8</div>
-                <div>Nummer 9</div>
+                {allProducts.map((product, index) => (
+                  <div key={index} className="relative z-10 p-4 py-6 md:p-6 md:py-8">
+                    <div className="dark:hidden w-full">
+                      <Image src={`/img/products/${product.imageLight}`} layout="fill"></Image>
+                    </div>
+                    <div className="hidden dark:block h-52 mx-4 relative">
+                      <Image src={`/img/products/${product.imageDark}`} layout="fill" className="object-contain object-center"></Image>
+                    </div>
+                    <div className="text-center mt-12">
+                      <h3 className="font-bold text-xl">{product.name}</h3>
+                    </div>
+                    <div className="absolute left-0 top-0 w-full h-full"></div>
+                  </div>
+                ))}
               </ProductCarousel>
 
               
@@ -208,7 +215,7 @@ export default function Index({allShowcases}) {
                 <DevelopmentCard 
                   title="Corporate Website"
                   icon={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>}
-                  text="Deine moderne Unternemens-website hebt Dich von der Konkurrenz ab."
+                  text="Deine moderne Unternemenswebsite hebt Dich von der Konkurrenz ab."
                   link="/"
                 />
                 <DevelopmentCard 

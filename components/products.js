@@ -6,24 +6,15 @@ import {Link} from './link'
 import {Card} from './card'
 
 /* Source: https://codesandbox.io/s/framer-motion-image-gallery-pqvx3?fontsize=14&module=/src/Example.tsx&file=/src/styles.css */
-const variants = {
-  enter: (direction) => {
-    return {x: direction > 0 ? 1000 : -1000, opacity: 0, scale: 0.8}
-  },
-  center: {zIndex: 1, x: 0, opacity: 1, scale: 1},
-  exit: (direction) => {
-    return {zIndex: 0, x: direction < 0 ? 1000 : -1000, opacity: 0, scale: 0.8}
-  }
-}
-
 const swipeConfidenceThreshold = 10000
 const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity
 }
 
 export const ProductCarousel = ({children}) => {
-  const [[page, direction], setPage] = useState([0, 0])
+  const [[page], setPage] = useState([0, 0])
   const pageIndex = wrap(0, children.length - 2, page)
+  const pageIndexMobile = wrap(0, children.length - 1, page)
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection])
   }
@@ -36,11 +27,6 @@ export const ProductCarousel = ({children}) => {
           </button>
         </div>
       </div>
-
-
-
-
-
       <div className="rounded-xl w-full h-96 overflow-hidden">
         <motion.div className="relative w-ful h-full"
           drag="x"
@@ -57,8 +43,9 @@ export const ProductCarousel = ({children}) => {
         >
           {children.map((child, index) => (
             <>
+            {/* DESKTOP CAROUSEL -> 3 CARDS */}
               <motion.div className="hidden sm:block lg:hidden xl:block absolute p-3 pt-2 pb-6 w-1/3 h-full cursor-grab active:cursor-grabbing"
-                key={index}
+                key={`desktop-${index}`}
                 animate={{
                   x: `${(index - pageIndex) * 100}%`,
                   opacity: (index < pageIndex || index > pageIndex + 2 ) ? 0 : 1,
@@ -69,40 +56,27 @@ export const ProductCarousel = ({children}) => {
                   x: {type: 'spring', stiffness: 300, damping: 27}
                 }}
               >
-                <Card className="w-full h-full">
-                  {child}
-                  <p>PageIndex: {pageIndex}</p>
-                
-                </Card>
+                <Card className="w-full h-full">{child}</Card>
               </motion.div>
+              {/* MOBILE CAROUSEL -> 2 CARDS */}
               <motion.div className="sm:hidden lg:block xl:hidden absolute p-3 pt-2 pb-6 w-1/2 h-full cursor-grab active:cursor-grabbing"
-                key={index}
+                key={`mobile-${index}`}
                 animate={{
-                  x: `${(index - pageIndex) * 100}%`,
-                  opacity: (index < pageIndex || index > pageIndex + 1 ) ? 0 : 1,
-                  scale: (index < pageIndex || index > pageIndex + 1 ) ? 0.9 : 1
+                  x: `${(index - pageIndexMobile) * 100}%`,
+                  opacity: (index < pageIndexMobile || index > pageIndexMobile + 1 ) ? 0 : 1,
+                  scale: (index < pageIndexMobile || index > pageIndexMobile + 1 ) ? 0.9 : 1
                 }}
-                initial={{x: `${(index - pageIndex) * 100}%`}}
+                initial={{x: `${(index - pageIndexMobile) * 100}%`}}
                 transition={{
                   x: {type: 'spring', stiffness: 300, damping: 27}
                 }}
               >
-                <Card className="w-full h-full">
-                  {child}
-                  <p>PageIndex: {pageIndex}</p>
-                
-                </Card>
+                <Card className="w-full h-full">{child}</Card>
               </motion.div>
             </>
           ))}
         </motion.div>
-        
       </div>
-
-
-
-
-
       <div className="w-4 text-right flex place-items-center">
         <div className="w-full text-right">
           <button onClick={() => paginate(1)} className="focus:outline-none text-teal-600 dark:text-teal-500 transition-all duration-300 transform hover:text-teal-500 dark:hover:text-teal-300 hover:scale-110">

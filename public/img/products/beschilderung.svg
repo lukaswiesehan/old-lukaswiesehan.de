@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="113" viewBox="0 0 94 113">
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(0 9.988)">
+      <ellipse cx="5.5" cy="13" fill="#A1A1AA" rx="5.5" ry="13"/>
+      <line x1="44" x2="7" y1="13.012" y2="13.012" stroke="#71717A" stroke-linecap="round" stroke-width="6"/>
+      <g transform="translate(0 66)">
+        <ellipse cx="5.5" cy="13" fill="#A1A1AA" rx="5.5" ry="13"/>
+        <line x1="44" x2="7" y1="13.012" y2="13.012" stroke="#71717A" stroke-linecap="round" stroke-width="6"/>
+      </g>
+    </g>
+    <path fill="#71717A" d="M88.564037,0.929073945 L92.700333,5.0490007 C93.4990989,5.78031783 94,6.83166305 94,8 L94,108 C94,110.209139 92.209139,112 90,112 L28,112 C26.8979662,112 25.9000224,111.554338 25.1765625,110.833408 L25.1754042,110.835525 L20.9390099,106.563183 L23.9990099,103.495074 L24,8 C24,5.790861 25.790861,4 28,4 L85.4710099,3.99907394 L88.564037,0.929073945 Z"/>
+    <rect width="70" height="108" x="20" fill="#52525B" rx="4"/>
+    <g transform="translate(27 9)">
+      <line x1="7.5" x2="47.5" y1="67.5" y2="67.5" stroke="#71717A" stroke-linecap="round" stroke-width="6"/>
+      <line x1="10" x2="45" y1="80" y2="80" stroke="#71717A" stroke-linecap="round" stroke-width="6"/>
+      <ellipse cx="27.5" cy="26.5" fill="#71717A" rx="27" ry="26.5"/>
+    </g>
+  </g>
+</svg>
