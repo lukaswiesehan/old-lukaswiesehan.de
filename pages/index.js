@@ -171,8 +171,8 @@ export default function Index({allShowcases, allProducts}) {
               <ProductCarousel>
                 {allProducts.map((product, index) => (
                   <div key={index} className="relative z-10 p-4 py-6 md:p-6 md:py-8">
-                    <div className="dark:hidden w-full">
-                      <Image src={`/img/products/${product.imageLight}`} layout="fill"></Image>
+                    <div className="dark:hidden h-52 mx-4 relative">
+                      <Image src={`/img/products/${product.imageLight}`} layout="fill" className="object-contain object-center"></Image>
                     </div>
                     <div className="hidden dark:block h-52 mx-4 relative">
                       <Image src={`/img/products/${product.imageDark}`} layout="fill" className="object-contain object-center"></Image>
