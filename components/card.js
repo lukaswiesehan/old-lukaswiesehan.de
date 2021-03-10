@@ -1,7 +1,5 @@
-import dynamic from 'next/dynamic'
 import {isMobile} from 'react-device-detect'
-
-const Tilt = dynamic(() => import('react-parallax-tilt'))
+import Tilt from 'react-parallax-tilt'
 
 export const Card = ({className, children}) => {
   if(isMobile) {
