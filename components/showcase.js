@@ -15,7 +15,8 @@ export const ShowcaseCard = ({title, tags, slug, link, previewDesktop, previewMo
           ))}
         </p>
         <h3 className="mt-4 font-bold text-2xl md:text-3xl">{title}</h3>
-        <p className="mt-4"><span className="line-clamp-2 md:line-clamp-3">{slug}</span><Link href={link}>Weiterlesen</Link></p>
+        <p className="mt-4 line-clamp-2 md:line-clamp-3">{slug}</p>
+        <p className="mt-2"><Link href={link}>Weiterlesen</Link></p>
       </div>
     </div>
     <div className="relative w-full md:w-5/12 lg:w-1/2 h-full pt-4 md:pt-12">

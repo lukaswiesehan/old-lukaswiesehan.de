@@ -57,6 +57,7 @@ module.exports = {
   variants: {
     extend: {
       translate: ['group-hover'],
+      scale: ['group-hover'],
       display: ['dark'],
       backgroundImage: ['dark', 'hover'],
       cursor: ['active']

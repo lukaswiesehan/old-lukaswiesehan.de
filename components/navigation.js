@@ -17,7 +17,7 @@ const NavItems = () => {
         <div className="h-8 my-4 ml-3 border-l-2 border-warm-gray-400 dark:border-cool-gray-600"></div>  
       </li>
       <li>
-        <NavLink to="services" title="Services" emoji="🤝"></NavLink>
+        <NavLink to="services-design" title="Services" emoji="🤝"></NavLink>
         <div className="h-8 my-4 ml-3 border-l-2 border-warm-gray-400 dark:border-cool-gray-600"></div>
       </li>
       <li>
