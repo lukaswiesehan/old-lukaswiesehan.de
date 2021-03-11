@@ -27,7 +27,7 @@ export const ProductCarousel = ({children}) => {
           </button>
         </div>
       </div>
-      <div className="rounded-xl w-full h-96 overflow-hidden">
+      <div className="rounded-xl w-full h-72 md:h-96 overflow-hidden">
         <motion.div className="relative w-ful h-full"
           drag="x"
           dragConstraints={{left: 0, right: 0}}
@@ -42,10 +42,9 @@ export const ProductCarousel = ({children}) => {
           }}
         >
           {children.map((child, index) => (
-            <>
+            <div key={index}>
             {/* DESKTOP CAROUSEL -> 3 CARDS */}
               <motion.div className="hidden sm:block lg:hidden xl:block absolute p-3 pt-2 pb-6 w-1/3 h-full cursor-grab active:cursor-grabbing"
-                key={`desktop-${index}`}
                 animate={{
                   x: `${(index - pageIndex) * 100}%`,
                   opacity: (index < pageIndex || index > pageIndex + 2 ) ? 0 : 1,
@@ -60,7 +59,6 @@ export const ProductCarousel = ({children}) => {
               </motion.div>
               {/* MOBILE CAROUSEL -> 2 CARDS */}
               <motion.div className="sm:hidden lg:block xl:hidden absolute p-3 pt-2 pb-6 w-1/2 h-full cursor-grab active:cursor-grabbing"
-                key={`mobile-${index}`}
                 animate={{
                   x: `${(index - pageIndexMobile) * 100}%`,
                   opacity: (index < pageIndexMobile || index > pageIndexMobile + 1 ) ? 0 : 1,
@@ -73,7 +71,7 @@ export const ProductCarousel = ({children}) => {
               >
                 <Card className="w-full h-full">{child}</Card>
               </motion.div>
-            </>
+            </div>
           ))}
         </motion.div>
       </div>
